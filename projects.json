@@ -1,0 +1,26 @@
+[
+    {
+        "title": "★ Tachyon -RoboCup Junior",
+        "tech": "C, C++, Python",
+        "description": "RoboCup JuniorのSoccer Openに出場居ました。この競技では自律型ロボットでボールを探索＆追跡し、サッカーを行います",
+        "image": "img/project/project1.png",
+        "url": "https://github.com/Tachyon-RCJ",
+        "demo": "https://tabitostudio.github.io/TachyonRCJ-jp/"
+    },
+    {
+        "title": "★ Logical",
+        "tech": "Python",
+        "description": "効率的なタスク管理を実現するWebアプリケーション。リアルタイム同期機能を搭載。",
+        "image": "img/project/project2.png",
+        "url": "#",
+        "demo": "https://tabitostudio.github.io/html/product/main.html"
+    },
+    {
+        "title": "★ PCBopti",
+        "tech": "Python",
+        "description": "Kicadから出力される製造用ファイルを発注用ファイルに書き換えます。",
+        "image": "img/project/project3.png",
+        "url": "#",
+        "demo": "https://tabitostudio.github.io/html/product/main.html"
+    }
+]

@@ -1,0 +1,68 @@
+[
+    {
+        "year": "2023年3月",
+        "event": "福岡県立宗像高校卒業",
+        "highlight": false
+    },
+    {
+        "year": "2023年4月",
+        "event": "国立大学法人電気通信大学入学",
+        "description": "情報系に進む",
+        "highlight": true
+    },
+    {
+        "year": "2024年4月",
+        "event": "team411と工学研究部という技術系サークルに所属",
+        "highlight": false
+    },
+    {
+        "year": "2024年9月",
+        "event": "UPoC～UECアイディア実証コンテストに出場",
+        "description": "サークルのプロジェクトで製作したタスク管理アプリを発表",
+        "highlight": false
+    },
+    {
+        "year": "2025年1月",
+        "event": "ロボカップジュニア関東ブロック大会優勝",
+        "description": "Soccer Openの競技に出場し日本大会へ推薦されました",
+        "highlight": true
+    },
+    {
+        "year": "2025年1月",
+        "event": "第二種電気工事士 資格取得",
+        "highlight": false
+    },
+    {
+        "year": "2025年2月",
+        "event": "調布祭実行委員会に所属",
+        "highlight": false
+    },
+    {
+        "year": "2025年3月",
+        "event": "ロボカップジュニア・ジャパンオープン2025で3つの賞を受賞",
+        "description": "技術などが評価され、優秀プレゼンテーション賞、審査員特別賞、スポンサー賞を受賞しました",
+        "highlight": true
+    },
+    {
+        "year": "2025年4月",
+        "event": "RoboCup Junior世界大会出場権獲得",
+        "highlight": false
+    },
+    {
+        "year": "2025年7月",
+        "event": "RoboCup2025 Salvadorに出場",
+        "description": "ブラジルで行われた世界大会に出場しました",
+        "highlight": true
+    },
+    {
+        "year": "2024年9月",
+        "event": "UPoC～UECアイディア実証コンテストで企業賞受賞",
+        "description": "サークルのプロジェクトで考案したVRについてのアイディアを発表",
+        "highlight": true
+    },
+    {
+        "year": "2025年2月",
+        "event": "学生ロボコンのサークル「ロボメカ工房」に所属",
+        "highlight": false
+    }
+]

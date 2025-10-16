@@ -3,77 +3,475 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tabito Personal Station - Personal Website">
-    <title>Tabito Personal Station</title>
+    <title>Tabito's Station</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1 class="logo">Tabito</h1>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
+    <!-- ヘッダー -->
+    <header class="main-header">
+        <h1 class="header-title">
+            <span class="title-blue">Tabito</span>
+            <span class="title-orange">Personal</span>
+            <span class="title-blue">Station</span>
+        </h1>
     </header>
 
-    <main>
-        <section id="home" class="hero">
+    <!-- メインコンテナ -->
+    <div class="main-container">
+        <!-- ホームセクション（丸ベースのデザイン） -->
+        <section class="home-section">
+            <!-- 背景画像 -->
+            <div class="background-overlay"></div>
+            
+            <!-- 大きな淡い光の球体（街明かり風） -->
+            <div class="ambient-lights">
+                <div class="light-orb large" style="top: 20%; left: 15%;"></div>
+                <div class="light-orb xlarge" style="top: 50%; left: 70%;"></div>
+                <div class="light-orb medium" style="top: 70%; left: 25%;"></div>
+                <div class="light-orb large" style="top: 30%; right: 10%;"></div>
+                <div class="light-orb medium" style="bottom: 15%; left: 60%;"></div>
+            </div>
+
+            <!-- 丸のコンテナ -->
+            <div class="circles-container">
+                <!-- 中央の自己紹介円形ウィンドウ -->
+                <div class="center-intro-window">
+                    <div class="intro-slides">
+                        <div class="intro-slide active">
+                            <div class="slide-image" style="background-image: url('img/hometop1.png');"></div>
+                            <div class="slide-content">
+                                <h3 class="slide-title">理工系の大学生</h3>
+                                <p class="slide-text">理工系国立大学でコンピュータサイエンスを専攻し、アルゴリズムやデータ解析などを大学で学んでいます!</p>
+                            </div>
+                        </div>
+                        <div class="intro-slide">
+                            <div class="slide-image" style="background-image: url('img/hometop2.png');"></div>
+                            <div class="slide-content">
+                                <h3 class="slide-title">ロボット製作</h3>
+                                <p class="slide-text">ロボコンの大会に向けて、ロボットの回路の制作やプログラムの作成を行っています！</p>
+                            </div>
+                        </div>
+                        <div class="intro-slide">
+                            <div class="slide-image" style="background-image: url('img/hometop3.png');"></div>
+                            <div class="slide-content">
+                                <h3 class="slide-title">ソフトウェア開発</h3>
+                                <p class="slide-text">大学のサークルや趣味でWebアプリやwindows用ソフトの開発などを行なっています！</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-indicators">
+                        <span class="indicator active" data-slide="0"></span>
+                        <span class="indicator" data-slide="1"></span>
+                        <span class="indicator" data-slide="2"></span>
+                    </div>
+                </div>
+
+                <!-- ナビゲーション用の丸（クリック可能・中央の周りに円形に均等配置） -->
+                <!-- 上 -->
+                <div class="circle nav-circle size-medium" data-section="profile" style="top: 12%; left: 50%; transform: translateX(-50%);">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="12" cy="7" r="4"></circle>
+                            </svg>
+                        </div>
+                        <div class="circle-label">プロフィール</div>
+                    </div>
+                </div>
+
+                <!-- 右上 -->
+                <div class="circle nav-circle size-medium" data-section="blog" style="top: 25%; left: 82%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="circle-label">ブログ</div>
+                    </div>
+                </div>
+
+                <!-- 右下 -->
+                <div class="circle nav-circle size-medium" data-section="awards" style="top: 60%; left: 82%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">受賞歴</div>
+                    </div>
+                </div>
+
+                <!-- 下 -->
+                <div class="circle nav-circle size-medium" data-section="certifications" style="top: 88%; left: 50%; transform: translateX(-50%);">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">資格</div>
+                    </div>
+                </div>
+
+                <!-- 左下 -->
+                <div class="circle nav-circle size-medium" data-section="projects" style="top: 60%; left: 11%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">プロジェクト</div>
+                    </div>
+                </div>
+
+                <!-- 左上 -->
+                <div class="circle nav-circle size-medium" data-section="contact" style="top: 25%; left: 11%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">コンタクト</div>
+                    </div>
+                </div>
+
+                <div class="circle nav-circle size-medium" data-section="blog" style="top: 25%; left: 65%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                            </svg>
+                        </div>
+                        <div class="circle-label">ブログ</div>
+                    </div>
+                </div>
+
+                <div class="circle nav-circle size-xlarge" data-section="awards" style="top: 50%; left: 15%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">受賞歴</div>
+                    </div>
+                </div>
+
+                <div class="circle nav-circle size-small" data-section="certifications" style="top: 55%; left: 75%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">資格</div>
+                    </div>
+                </div>
+
+                <div class="circle nav-circle size-medium" data-section="projects" style="top: 70%; left: 35%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="16 18 22 12 16 6"></polyline>
+                                <polyline points="8 6 2 12 8 18"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">プロジェクト</div>
+                    </div>
+                </div>
+
+                <div class="circle nav-circle size-large" data-section="contact" style="top: 75%; left: 70%;">
+                    <div class="circle-content">
+                        <div class="circle-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="circle-label">コンタクト</div>
+                    </div>
+                </div>
+
+                <!-- 装飾用の丸（単色・光るエフェクト） -->
+                <div class="circle deco-circle star-circle tiny" style="top: 8%; left: 45%;"></div>
+                <div class="circle deco-circle star-circle small" style="top: 12%; left: 85%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 22%; left: 30%;"></div>
+                <div class="circle deco-circle star-circle medium" style="top: 30%; left: 50%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 35%; left: 10%;"></div>
+                <div class="circle deco-circle star-circle small" style="top: 42%; left: 88%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 48%; left: 45%;"></div>
+                <div class="circle deco-circle star-circle medium" style="top: 58%; left: 60%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 62%; left: 8%;"></div>
+                <div class="circle deco-circle star-circle small" style="top: 68%; left: 82%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 78%; left: 25%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 82%; left: 52%;"></div>
+                <div class="circle deco-circle star-circle small" style="top: 88%; left: 15%;"></div>
+                <div class="circle deco-circle star-circle tiny" style="top: 92%; left: 90%;"></div>
+                
+                <!-- グラデーション単色の丸 -->
+                <div class="circle solid-circle blue-circle tiny" style="top: 18%; left: 55%;"></div>
+                <div class="circle solid-circle orange-circle small" style="top: 38%; left: 70%;"></div>
+                <div class="circle solid-circle white-circle tiny" style="top: 45%; left: 25%;"></div>
+                <div class="circle solid-circle blue-circle medium" style="top: 65%; left: 50%;"></div>
+                <div class="circle solid-circle orange-circle tiny" style="top: 72%; left: 12%;"></div>
+                <div class="circle solid-circle white-circle small" style="top: 85%; left: 65%;"></div>
+            </div>
+        </section>
+
+        <!-- コンテンツセクション（各カードに対応） -->
+        <section id="profile" class="content-section">
             <div class="container">
-                <div class="hero-content">
-                    <h2>Welcome to Tabito Personal Station</h2>
-                    <p>Your personal space on the web</p>
+                <h2 class="content-title">プロフィール</h2>
+                <div class="content-body">
+                    <div class="profile-card">
+                        <div class="profile-header">
+                            <h3>たびと（Yu Nakano）</h3>
+                            <p class="profile-subtitle">理工系大学生 / フロントエンジニア / ロボット製作</p>
+                        </div>
+                        <p>こんにちは！たびとという名前で活動しています。主にサークルなどでフロントをメインにアプリ開発を行っています。また、ロボット開発にも力を入れていて、回路の制作やプログラムの作成を行っています。</p>
+                        <div class="profile-section">
+                            <h4>● 所属</h4>
+                            <p>国立大学法人電気通信大学 情報理工学域 2年</p>
+                            <p>情報系の分野を専攻</p>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <h4>● 技術スタック</h4>
+                            <ul class="tech-list">
+                                <li>プログラミング言語: Python, JavaScript, C++, C</li>
+                                <li>フロントエンド: HTML, CSS, React, React native</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="profile-section">
+                            <h4>● 興味・関心</h4>
+                            <p>好きなアーティストはずっと真夜中でいいのにです！</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <section id="timeline-travel" class="content-section">
             <div class="container">
-                <h2>About</h2>
-                <p>Welcome to my personal website. This is a place where I share my thoughts, projects, and experiences.</p>
-            </div>
-        </section>
+                <div class="dual-timeline-wrapper">
+                    <div class="timeline-section">
+                        <h2 class="content-title">これまでの活動</h2>
+                        <div class="content-body">
+                            <div class="timeline-container" id="timeline-container">
+                                <!-- タイムラインはJSONから動的に生成されます -->
+                            </div>
+                        </div>
+                    </div>
 
-        <section id="projects" class="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <h3>Project 1</h3>
-                        <p>Coming soon...</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Project 2</h3>
-                        <p>Coming soon...</p>
-                    </div>
-                    <div class="project-card">
-                        <h3>Project 3</h3>
-                        <p>Coming soon...</p>
+                    <div class="timeline-section">
+                        <h2 class="content-title">旅行記</h2>
+                        <div class="content-body">
+                            <div class="timeline-container" id="travel-container">
+                                <!-- 旅行記はJSONから動的に生成されます -->
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <section id="blog" class="content-section">
             <div class="container">
-                <h2>Contact</h2>
-                <p>Feel free to reach out!</p>
-                <div class="contact-links">
-                    <a href="https://github.com/TabitoStudio" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <h2 class="content-title">ブログ</h2>
+                <div class="content-body">
+                    <div class="blog-grid" id="blog-grid">
+                        <!-- ブログ記事はJSONから動的に生成されます -->
+                    </div>
+                    <div class="view-more-container">
+                        <button class="view-more-btn" id="blog-view-more">
+                            もっと見る →
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Tabito Personal Station. All rights reserved.</p>
-        </div>
-    </footer>
+        <section id="awards" class="content-section">
+            <div class="container">
+                <h2 class="content-title">大会出場・受賞歴</h2>
+                <div class="content-body">
+                    <div class="awards-list">
+                        <div class="award-item in-progress">
+                            <div class="award-year">2026</div>
+                            <div class="award-content">
+                                <h3>NHK学生ロボコン</h3>
+                                <span class="challenge-badge">
+                                    <span class="fire-effect">🔥</span>
+                                    挑戦中
+                                </span>
+                            </div>
+                        </div>
+                        <div class="award-item in-progress">
+                            <div class="award-year">2026</div>
+                            <div class="award-content">
+                                <h3>RoboCup @Home</h3>
+                                <span class="challenge-badge">
+                                    <span class="fire-effect">🔥</span>
+                                    挑戦中
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="award-item">
+                            <div class="award-year">2025</div>
+                            <div class="award-content">
+                                <h3>UPoC～UECアイディア実証コンテストで受賞！</h3>
+                                <p>VRに関する新しいアイディアを提案し、企業賞を受賞しました。</p>
+                            </div>
+                        </div>
+                        
+                        <div class="award-item">
+                            <div class="award-year">2025</div>
+                            <div class="award-content">
+                                <h3>RoboCup2025 Salvador出場！</h3>
+                                <p>ブラジルで行われたRoboCupの世界大会に出場しました</p>
+                            </div>
+                        </div>
+                        
+                        <div class="award-item">
+                            <div class="award-year">2024</div>
+                            <div class="award-content">
+                                <h3>ロボカップジュニア・ジャパンオープン2025 名古屋 受賞！</h3>
+                                <p>ロボットの技術や活動が評価され、優秀プレゼンテーション賞、審査員特別賞、スポンサー賞を受賞しました</p>
+                            </div>
+                        </div>
+                        
+                        <div class="award-item">
+                            <div class="award-year">2022</div>
+                            <div class="award-content">
+                                <h3>帝京大学 高校生プログラミングコンテストで受賞！</h3>
+                                <p>論理回路制作ソフトを発表して優良賞を受賞しました！</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications" class="content-section">
+            <div class="container">
+                <h2 class="content-title">資格</h2>
+                <div class="content-body">
+                    <div class="cert-grid">
+                        <div class="cert-card in-progress">
+                            <h3>◆ ファイナンシャル・プランニング技能検定3級</h3>
+                            <p class="cert-date">取得予定: 20??年</p>
+                            <p>金融財政事情研究会, 日本FP協会</p>
+                            <span class="challenge-badge">
+                                <span class="fire-effect">🔥</span>
+                                挑戦中
+                            </span>
+                        </div>
+
+                        <div class="cert-card pending">
+                            <h3>◆ 応用情報技術者試験</h3>
+                            <p class="cert-date">受験済み: 2025年10月</p>
+                            <p>IPA 独立行政法人 情報処理推進機構</p>
+                            <span class="pending-badge">
+                                <span class="hourglass-effect">⏳</span>
+                                結果待ち中
+                            </span>
+                        </div>
+                        
+                        <div class="cert-card">
+                            <h3>◆ 第二種電気工事士</h3>
+                            <p class="cert-date">取得: 2025年</p>
+                            <p>一般財団法人 電気技術者試験センター</p>
+                        </div>
+                        
+                        <div class="cert-card">
+                            <h3>◆ ITパスポート試験</h3>
+                            <p class="cert-date">取得: 2024年</p>
+                            <p>IPA 独立行政法人 情報処理推進機構</p>
+                        </div>
+
+                        <div class="cert-card">
+                            <h3>◆ 実用数学技能検定 準1級</h3>
+                            <p class="cert-date">取得: 2023年</p>
+                            <p>公益財団法人 日本数学検定協会</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="content-section">
+            <div class="container">
+                <h2 class="content-title">プロジェクト・製品</h2>
+                <div class="content-body">
+                    <div class="project-grid" id="project-grid">
+                        <!-- プロジェクトはJSONから動的に生成されます -->
+                    </div>
+                    <div class="view-more-container">
+                        <button class="view-more-btn" id="project-view-more">
+                            もっと見る →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="content-section">
+            <div class="container">
+                <h2 class="content-title">コンタクト</h2>
+                <div class="content-body">
+                    <div class="contact-info">
+                        <h3>お問い合わせ</h3>
+                        <p>ぜひお気軽に～！交流しましょう！</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <h4>● GitHub</h4>
+                                <p><a href="https://github.com/TabitoStudio" target="_blank" rel="noopener noreferrer" style="color: aliceblue;">https://github.com/TabitoStudio</a></p>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <h4>● X</h4>
+                                <p><a href="https://x.com/tabito1419_New" target="_blank" rel="noopener noreferrer" style="color: aliceblue;">https://x.com/tabito1419_New</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="links" class="content-section">
+            <div class="container">
+                <h2 class="content-title">リンク</h2>
+                <div class="content-body">
+                    <div class="links-grid" id="links-grid">
+                        <!-- リンクはJSONから動的に生成されます -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
