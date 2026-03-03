@@ -29,6 +29,13 @@
         </h1>
     </header>
 
+    <!-- 名刺読み込みバー -->
+    <div id="businesscard-bar" class="businesscard-bar" style="display: none;">
+        <div class="businesscard-bar-content">
+            <span id="businesscard-message">名刺を読み込みました（名刺id: <span id="businesscard-id"></span>）</span>
+        </div>
+    </div>
+
     <!-- メインコンテナ -->
     <div class="main-container">
         <!-- ホームセクション（丸ベースのデザイン） -->
@@ -53,7 +60,7 @@
                         <div class="intro-slide active">
                             <div class="slide-image" style="background-image: url('img/hometop1.png');"></div>
                             <div class="slide-content">
-                                <h3 class="slide-title">理工系の大学生</h3>
+                                <h3 class="slide-title">情報系を勉強中！</h3>
                                 <p class="slide-text">理工系国立大学でコンピュータサイエンスを専攻し、アルゴリズムやデータ解析などを大学で学んでいます!</p>
                             </div>
                         </div>
@@ -256,11 +263,18 @@
                 <h2 class="content-title">プロフィール</h2>
                 <div class="content-body">
                     <div class="profile-card">
-                        <div class="profile-header">
-                            <h3>たびと（Yu Nakano）</h3>
-                            <p class="profile-subtitle">理工系大学生 / フロントエンジニア / ロボット製作</p>
+                        <div class="profile-intro-wrapper">
+                            <div class="profile-image-container">
+                                <img src="img/profile.png" alt="プロフィール画像" class="profile-image">
+                            </div>
+                            <div class="profile-intro-content">
+                                <div class="profile-header">
+                                    <h3>たびと（Yu Nakano）</h3>
+                                    <p class="profile-subtitle">理工系大学生 / フロントエンジニア / ロボット製作</p>
+                                </div>
+                                <p>こんにちは！たびとという名前で活動しています。主にサークルなどでフロントをメインにアプリ開発を行っています。また、ロボット開発にも力を入れていて、回路の制作やプログラムの作成を行っています。</p>
+                            </div>
                         </div>
-                        <p>こんにちは！たびとという名前で活動しています。主にサークルなどでフロントをメインにアプリ開発を行っています。また、ロボット開発にも力を入れていて、回路の制作やプログラムの作成を行っています。</p>
                         <div class="profile-section">
                             <h4>● 所属</h4>
                             <p>国立大学法人電気通信大学 情報理工学域 2年</p>
@@ -391,24 +405,10 @@
                 <h2 class="content-title">資格</h2>
                 <div class="content-body">
                     <div class="cert-grid">
-                        <div class="cert-card in-progress">
-                            <h3>◆ ファイナンシャル・プランニング技能検定3級</h3>
-                            <p class="cert-date">取得予定: 20??年</p>
-                            <p>金融財政事情研究会, 日本FP協会</p>
-                            <span class="challenge-badge">
-                                <span class="fire-effect">🔥</span>
-                                挑戦中
-                            </span>
-                        </div>
-
-                        <div class="cert-card pending">
+                        <div class="cert-card">
                             <h3>◆ 応用情報技術者試験</h3>
-                            <p class="cert-date">受験済み: 2025年10月</p>
+                            <p class="cert-date">取得: 2025年12月</p>
                             <p>IPA 独立行政法人 情報処理推進機構</p>
-                            <span class="pending-badge">
-                                <span class="hourglass-effect">⏳</span>
-                                結果待ち中
-                            </span>
                         </div>
                         
                         <div class="cert-card">
@@ -486,5 +486,31 @@
     </div>
 
     <script src="script.js"></script>
+    <script>
+        // クエリパラメータを処理して名刺読み込みバーを表示
+        function initBusinessCardBar() {
+            const params = new URLSearchParams(window.location.search);
+            const colorCode = params.get('c');
+            const cardId = params.get('id');
+
+            if (colorCode && cardId) {
+                const bar = document.getElementById('businesscard-bar');
+                const idElement = document.getElementById('businesscard-id');
+                
+                // カラーコードが有効な16進数か確認
+                if (/^[0-9A-Fa-f]{6}$/.test(colorCode)) {
+                    // バーを表示
+                    bar.style.display = 'block';
+                    bar.style.backgroundColor = '#' + colorCode;
+                    
+                    // カードIDを表示
+                    idElement.textContent = cardId;
+                }
+            }
+        }
+
+        // ページロード時に初期化
+        document.addEventListener('DOMContentLoaded', initBusinessCardBar);
+    </script>
 </body>
 </html>
