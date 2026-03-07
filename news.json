@@ -1,0 +1,23 @@
+[
+  {
+    "title": "RCJ 世界大会に出場しました",
+    "description": "7月にブラジルで行われたRCJの世界大会に日本代表として出場しました",
+    "image": "img/news/n1.png",
+    "url": "https://www.uec.ac.jp/news/announcement/2025/20250626_7054.html",
+    "shadowColor": "rgba(235,99,37,0.55)"
+  },
+  {
+    "title": "四国一周旅行の記事公開中",
+    "description": "3日間鉄道を使って巡った四国一周の旅をnoteの記事で紹介しています",
+    "image": "img/news/n2.png",
+    "url": "https://note.com/tabito1419/n/n0ed749408b09?sub_rt=share_sb",
+    "shadowColor": "rgba(37,99,235,0.55)"
+  },
+  {
+    "title": "学生ロボットEXPOを開催しました",
+    "description": "TiBで学生同士がロボットを展示し交流するイベントの運営に参加しました",
+    "image": "img/news/n3.png",
+    "url": "https://robot.exposition.tokyo",
+    "shadowColor": "rgba(37,99,235,0.55)"
+  }
+]

@@ -373,7 +373,108 @@ window.addEventListener('DOMContentLoaded', function() {
     loadTimeline();
     loadTravel();
     loadLinks();
+    loadNews();
 });
+
+// ===== ニュースの読み込みとスライダー表示 =====
+let newsData = [];
+let newsIndex = 0;
+let newsAutoSlide = null;
+
+async function loadNews() {
+    try {
+        const response = await fetch('news.json');
+        newsData = await response.json();
+        displayNews();
+    } catch (error) {
+        console.error('ニュースの読み込みに失敗しました:', error);
+    }
+}
+
+function displayNews() {
+    const slider = document.getElementById('news-slider');
+    const indicators = document.getElementById('news-indicators');
+    if (!slider || !indicators) return;
+
+    slider.innerHTML = '';
+    indicators.innerHTML = '';
+
+    if (!newsData || newsData.length === 0) {
+        slider.innerHTML = '<div class="no-data-message">ニュースがありません</div>';
+        return;
+    }
+
+    newsData.forEach((item, i) => {
+        const a = document.createElement('a');
+        a.className = 'news-slide';
+        a.href = item.url || '#';
+        a.target = item.url ? '_blank' : '_self';
+
+        const img = document.createElement('img');
+        img.src = item.image || '';
+        img.alt = item.title || '';
+        img.onerror = function() { this.style.display = 'none'; };
+
+        const overlay = document.createElement('div');
+        overlay.className = 'news-overlay';
+        overlay.style.background = `linear-gradient(180deg, rgba(0,0,0,0) 20%, ${item.shadowColor || 'rgba(0,0,0,0.6)'} 100%)`;
+
+        const content = document.createElement('div');
+        content.className = 'news-content';
+        content.innerHTML = `<h3>${item.title || ''}</h3><p>${item.description || ''}</p>`;
+
+        a.appendChild(img);
+        a.appendChild(overlay);
+        a.appendChild(content);
+
+        // クリックで外部リンクに移動（target属性で新しいタブ）
+        slider.appendChild(a);
+
+        const dot = document.createElement('div');
+        dot.className = 'dot' + (i === 0 ? ' active' : '');
+        dot.addEventListener('click', () => {
+            newsIndex = i;
+            updateNewsPosition();
+            resetNewsAuto();
+        });
+        indicators.appendChild(dot);
+    });
+
+    // 初期表示
+    newsIndex = 0;
+    updateNewsPosition();
+    resetNewsAuto();
+
+    // ホバーで自動切替を止める
+    const wrapper = document.querySelector('.news-wrapper');
+    if (wrapper) {
+        wrapper.addEventListener('mouseenter', () => { clearInterval(newsAutoSlide); });
+        wrapper.addEventListener('mouseleave', () => { resetNewsAuto(); });
+    }
+}
+
+function updateNewsPosition() {
+    const slider = document.getElementById('news-slider');
+    const indicatorDots = document.querySelectorAll('#news-indicators .dot');
+    if (!slider) return;
+
+    const slideWidth = slider.querySelector('.news-slide') ? slider.querySelector('.news-slide').getBoundingClientRect().width + 16 : 0;
+    const offset = slideWidth * newsIndex * -1;
+    slider.style.transform = `translateX(${offset}px)`;
+
+    indicatorDots.forEach((d, i) => {
+        d.classList.toggle('active', i === newsIndex);
+    });
+}
+
+function resetNewsAuto() {
+    clearInterval(newsAutoSlide);
+    newsAutoSlide = setInterval(() => {
+        newsIndex = (newsIndex + 1) % Math.max(1, newsData.length);
+        updateNewsPosition();
+    }, 4500);
+}
+
 
 // ===== タイムライン（歩み）の読み込みと表示 =====
 let timelineData = [];
