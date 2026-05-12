@@ -1,5 +1,13 @@
 [
     {
+        "title": "★ Denly ",
+        "tech": "TypeScript, React native, Fly.ioなど",
+        "description": "電通大生用課題管理・共有アプリのサービスを開始しました。WEB版とiOS版を公開、Android版はテスト版を公開中です。",
+        "image": "img/project/project4.png",
+        "url": "#",
+        "demo": "https://denly-web.pages.dev"
+    },
+    {
         "title": "★ Tachyon -RoboCup Junior",
         "tech": "C, C++, Python",
         "description": "RoboCup JuniorのSoccer Openに出場居ました。この競技では自律型ロボットでボールを探索＆追跡し、サッカーを行います",
